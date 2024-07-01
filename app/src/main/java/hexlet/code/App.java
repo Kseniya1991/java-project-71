@@ -9,10 +9,10 @@ import java.util.concurrent.Callable;
         description = "Prints the checksum (SHA-256 by default) of a file to STDOUT.")
 public class App implements Callable<Integer> {
     @CommandLine.Parameters(index = "0", paramLabel = "filepath1", description = "path to first file")
-    private String file1;
+    private String filepath1;
 
     @CommandLine.Parameters(index = "0", paramLabel = "filepath2", description = "path to second file")
-    private String file2;
+    private String filepath2;
 
     @Option(
             names = {"-f", "--format"},
@@ -24,6 +24,7 @@ public class App implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
+        System.out.println(Differ.generate(filepath1, filepath2, format));
         return 0;
     }
 
