@@ -1,10 +1,13 @@
 package hexlet.code;
 
+import java.io.IOException;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
+import java.nio.file.Files;
 
-public class Differ {
-    public static String generate(String filepath1, String filepath2, String format) {
+public class Differ { //основной класс
+    public static String generate(String filepath1, String filepath2, String format) throws IOException {
         String content1 = readFile(filepath1);
         String content2 = readFile(filepath2);
 
@@ -18,13 +21,24 @@ public class Differ {
         return StylishFormatter.format((compareResult));
     }
 
-    private static String readFile(String filepath) {
-        //читаем содержимое файла
-        return "";
+    private static String readFile(String filepath) throws IOException {
+        Path pathOfFile = Path.of(filepath);
+        String result = Files.readString(pathOfFile);
+        return result;
     }
 
     private static String getFileType(String filepath) {
-        //возвращает расширение файла (json, yml, yaml)
-        return "";
+        String[] resultOfSplit = filepath.split("\\.");
+        String format = resultOfSplit[resultOfSplit.length - 1];
+
+        //возвращает расширение файла (сплит по точке и взять последний элемент) (json, yml, yaml)
+        return format;
+    }
+
+    public static String format(List<Map<String, Object>> compareResult, String format) {
+        return switch (format) {
+            case "stylish" -> StylishFormatter.format(compareResult);
+            default -> throw new RuntimeException("not correct format");
+        };
     }
 }
