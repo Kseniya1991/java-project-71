@@ -2,7 +2,6 @@ package hexlet.code;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 public class Differ {
     public static String generate(String filepath1, String filepath2, String format) {

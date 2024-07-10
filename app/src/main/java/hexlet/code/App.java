@@ -5,13 +5,12 @@ import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
 import java.util.concurrent.Callable;
 
-@Command(name = "project", mixinStandardHelpOptions = true, version = "checksum 4.0",
-        description = "Prints the checksum (SHA-256 by default) of a file to STDOUT.")
+@Command(name = "project", mixinStandardHelpOptions = true)
 public class App implements Callable<Integer> {
     @CommandLine.Parameters(index = "0", paramLabel = "filepath1", description = "path to first file")
     private String filepath1;
 
-    @CommandLine.Parameters(index = "0", paramLabel = "filepath2", description = "path to second file")
+    @CommandLine.Parameters(index = "1", paramLabel = "filepath2", description = "path to second file")
     private String filepath2;
 
     @Option(
