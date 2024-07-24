@@ -7,7 +7,7 @@ import java.util.Map;
 import java.nio.file.Files;
 
 public class Differ { //основной класс
-    public static String generate(String filepath1, String filepath2, String format) throws IOException {
+    public static String generate(String filepath1, String filepath2, String format) throws Exception {
         String content1 = readFile(filepath1);
         String content2 = readFile(filepath2);
 
@@ -34,7 +34,7 @@ public class Differ { //основной класс
         return format;
     }
 
-    public static String format(List<Map<String, Object>> compareResult, String format) {
+    public static String format(List<Map<String, Object>> compareResult, String format) throws Exception {
         return switch (format) {
             case "stylish" -> StylishFormatter.format(compareResult);
             default -> throw new RuntimeException("not correct format");

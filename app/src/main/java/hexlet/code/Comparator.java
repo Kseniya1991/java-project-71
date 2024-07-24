@@ -47,7 +47,7 @@ public class Comparator {
                     break;
                 case "added": temp.put("field", entry.getKey());
                     temp.put("status", entry.getValue());
-                    temp.put("new value", file1.get(entry.getKey()));
+                    temp.put("new value", file2.get(entry.getKey()));
                     break;
                 default:
                     break;
