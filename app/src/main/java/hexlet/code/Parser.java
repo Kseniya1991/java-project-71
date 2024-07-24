@@ -1,15 +1,16 @@
 package hexlet.code;
 
+import java.io.IOException;
 import java.util.Map;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Parser {
 
-    public static Map<String, Object> parse(String content, String format) throws JsonProcessingException {
-        //парсим файл
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(content, Map.class);
+    public static Map<String, Object> parse(String json, String format) throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper.readValue(json, new TypeReference<>() {
+        });
     }
 }

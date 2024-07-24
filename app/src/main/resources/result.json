@@ -1,0 +1,20 @@
+[
+  {
+    "FIELD": "host",
+    "STATUS": "SAME",
+    "OLD_VALUE": "hexlet.io"
+  },
+  {
+    "FIELD": "array",
+    "STATUS": "SAME",
+    "OLD_VALUE": [
+      1,
+      2
+    ]
+  },
+  {
+    "FIELD": "follow",
+    "STATUS": "REMOVED",
+    "OLD_VALUE": false
+  }
+]

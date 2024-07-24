@@ -23,8 +23,7 @@ public class Differ { //основной класс
 
     private static String readFile(String filepath) throws IOException {
         Path pathOfFile = Path.of(filepath);
-        String result = Files.readString(pathOfFile);
-        return result;
+        return Files.readString(pathOfFile);
     }
 
     private static String getFileType(String filepath) {
