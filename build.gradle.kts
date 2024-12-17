@@ -28,6 +28,10 @@ tasks.test {
     useJUnitPlatform()
 }
 
+tasks.jacocoTestReport {
+    reports { xml.required.set(true) }
+}
+
 tasks.getByName("run", JavaExec::class) {
     standardInput = System.`in`
 }
