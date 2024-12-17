@@ -28,10 +28,9 @@ public class Differ { //основной класс
 
     private static String getFileType(String filepath) {
         String[] resultOfSplit = filepath.split("\\.");
-        String format = resultOfSplit[resultOfSplit.length - 1];
 
         //возвращает расширение файла (сплит по точке и взять последний элемент) (json, yml, yaml)
-        return format;
+        return resultOfSplit[resultOfSplit.length - 1];
     }
 
     public static String format(List<Map<String, Object>> compareResult, String format) throws Exception {

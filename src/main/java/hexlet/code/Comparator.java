@@ -52,9 +52,9 @@ public class Comparator {
                 default:
                     break;
             }
-            result.add(temp);
 
-        } //в лист преобразовать только отсортированную по порядку мапу
+            result.add(temp);
+        }
 
         return result;
     }

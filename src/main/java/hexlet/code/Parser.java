@@ -8,7 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Parser {
 
-    public static Map<String, Object> parse(String json, String format) throws IOException {
+    public static Map<String, Object> parse(String json, String format) throws IOException { //дописать
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.readValue(json, new TypeReference<>() {
         });
